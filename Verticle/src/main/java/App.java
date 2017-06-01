@@ -8,8 +8,7 @@ public class App extends AbstractVerticle {
     vertx
         .createHttpServer()
         .requestHandler(r -> {
-          r.response().end("<h1>Hello from my first " +
-              "Vert.x 3 application</h1>");
+          r.response().sendFile("./Verticle/web/index.html");
         })
         .listen(8080, result -> {
           if (result.succeeded()) {
